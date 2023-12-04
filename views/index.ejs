@@ -1,0 +1,29 @@
+<% layout('/layouts/boilerplate') -%>
+<body>
+    <br>
+    <h1>All notes</h1>
+    <div class="container mt-5">
+        <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1">
+            <% for (eachNote of allNotes) { %>
+                <div class="col mb-4">
+                    <div class="card bg-primary text-white hover" style="width: 18rem; cursor: pointer;" onclick="redirectToLink('/notes/<%= eachNote._id %>')">
+                        <div class="card-body">
+                            <h5 class="card-title"><%= eachNote.title %></h5>
+                        </div>
+                    </div>
+                </div>
+            <% } %>
+        </div>
+    </div>
+    
+    <script>
+        function redirectToLink(link) {
+            window.location.href = link;
+        }
+    </script>        
+    <form action="/new" method="get">
+        <button>New notes</button>
+    </form>
+</body>
+
+

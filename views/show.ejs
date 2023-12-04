@@ -1,0 +1,14 @@
+<% layout('/layouts/boilerplate') -%>
+
+    <h1><%=allNotes.title%></h1>
+    <p><%=allNotes.content%></p>
+    <div style="display: flex;">
+        <form action="/notes/<%=allNotes._id%>/edit" method="get">
+            <button>Edit</button>
+        </form>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <form action="/notes/<%=allNotes._id%>?_method=DELETE" method="post">
+            <button>Delete</button>
+        </form>
+    </div>
+</body>
+</html>
