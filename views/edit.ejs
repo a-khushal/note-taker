@@ -1,12 +1,12 @@
 <% layout('/layouts/boilerplate') -%>
 
-    <h2>Edit notes</h2>
+    <h2 class="mt-5">Edit notes</h2>
     <form action="/notes/<%=allNotes._id%>?_method=PUT" method="post">
-        <input type="text" placeholder="title" name="title" value="<%=allNotes.title%>">
-        <br><br>
-        <textarea placeholder="take notes" name="notes" id="notes" cols="150" rows="30"><%=allNotes.content%></textarea>
+        <input type="text" placeholder="title" name="title" value="<%=allNotes.title%>" class="form-control">
         <br>
-        <button>Edit</button>
+        <textarea placeholder="take notes" name="notes" id="notes" cols="150" rows="15" class="form-control"><%=allNotes.content%></textarea>
+        <br>
+        <button class="btn btn-dark">Edit</button>
     </form>
 </body>
 </html>
